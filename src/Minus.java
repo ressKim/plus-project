@@ -20,6 +20,9 @@ public class Minus {
                     result++;
                     first++;
                 }
+                /**
+                 * 삑!!!!! 마이너스 해결하고 수정필요
+                 */
                 return -result;
             }
             return result;
@@ -41,7 +44,9 @@ public class Minus {
                 first++;
                 second++;
             }
-
+            /**
+             * 삑!! 마이너스 해결하고 수정 필요
+             */
             result = -second;
             return result;
         }
@@ -52,6 +57,9 @@ public class Minus {
                     first++;
                     second++;
                 }
+                /**
+                 * 삑!! 마이너스 해결하고 수정 필요
+                 */
                 result = -first;
                 return result;
             }
