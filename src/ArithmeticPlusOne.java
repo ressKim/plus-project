@@ -1,6 +1,18 @@
 public class ArithmeticPlusOne {
 
     public static void main(String[] args) {
+        System.out.println("Plus.run = 1 + 1 = " + Plus.run(1, 1));
+        System.out.println("Plus.run = 3 + 1 = " + Plus.run(3, 1));
+        System.out.println("Plus.run = 1 + 3 = " + Plus.run(1, 3));
+        System.out.println("Plus.run = --------------");
+        System.out.println("Plus.run = 1 + (-3) = " + Plus.run(1, -3));
+        System.out.println("Plus.run = (-1) + 3 = " + Plus.run(-1, 3));
+        System.out.println("Plus.run = --------------");
+        System.out.println("Plus.run = (-1) + (-1) = " + Plus.run(-1, -1));
+        System.out.println("Plus.run = (-3) + (-1) = " + Plus.run(-3, -1));
+        System.out.println("Plus.run = (-1) + (-3) = " + Plus.run(-1, -3));
+        System.out.println("Plus.run = --------------");
+
         System.out.println("Minus.run = 1 - 1 = " + Minus.run(1, 1));
         System.out.println("Minus.run = 3 - 1 = " + Minus.run(3, 1));
         System.out.println("Minus.run = 1 - 3 = " + Minus.run(1, 3));
@@ -11,6 +23,7 @@ public class ArithmeticPlusOne {
         System.out.println("Minus.run = (-1) - (-1) = " + Minus.run(-1, -1));
         System.out.println("Minus.run = (-3) - (-1) = " + Minus.run(-3, -1));
         System.out.println("Minus.run = (-1) - (-3) = " + Minus.run(-1, -3));
+        System.out.println("Plus.run = --------------");
 
 
         System.out.println("Multiple.run = 1 * 1 = " + Multiple.run(1,1));
@@ -19,6 +32,7 @@ public class ArithmeticPlusOne {
         System.out.println("Multiple.run = 2 * (-3) = " + Multiple.run(2,-3));
         System.out.println("Multiple.run = (-3) * 2 = " + Multiple.run(-3,2));
         System.out.println("Multiple.run = (-3) * (-3) = " + Multiple.run(-3,-3));
+        System.out.println("Plus.run = --------------");
 
         System.out.println("Divide.run = 1 / 0 = " + Divide.run(1,0));
         System.out.println("Divide.run = 0 / 10 = " + Divide.run(0,10));

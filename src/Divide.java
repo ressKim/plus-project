@@ -32,8 +32,11 @@ public class Divide {
 
         //일단 나머지는 음수로 표현도 허용하는 방식으로 구현하였습니다.
         if (first < 0 || second < 0) {
-            reminder = ~reminder + 1;
+            if (first < 0 && second > 0) {
+                reminder = ~reminder + 1;
+            }
             if (first < 0 && second < 0) {
+                reminder = ~reminder + 1;
             } else {
                 quotient = ~quotient + 1;
             }
