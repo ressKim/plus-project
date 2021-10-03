@@ -20,14 +20,13 @@ public class ArithmeticPlusOne {
         System.out.println("Multiple.run = (-3) * 2 = " + Multiple.run(-3,2));
         System.out.println("Multiple.run = (-3) * (-3) = " + Multiple.run(-3,-3));
 
-//        System.out.println("Divide.run = 1 / 0 = " + Divide.run(1,0));
-//        System.out.println("Divide.run = 0 / 10 = " + Divide.run(0,10));
+        System.out.println("Divide.run = 1 / 0 = " + Divide.run(1,0));
+        System.out.println("Divide.run = 0 / 10 = " + Divide.run(0,10));
         System.out.println("Divide.run = 3 / 1 = " + Divide.run(3,1));
         System.out.println("Divide.run = 10 / 3 = " + Divide.run(10,3));
         System.out.println("Divide.run = 3 / 10 = " + Divide.run(3,10));
         System.out.println("Divide.run = -10 / 3 = " + Divide.run(-10,3));
         System.out.println("Divide.run = 10 / -3 = " + Divide.run(10,-3));
-        System.out.println("Divide.run = -10 / -3 = " + Divide.run(-10,-3));
         System.out.println("Divide.run = -10 / -3 = " + Divide.run(-10,-3));
 
     }

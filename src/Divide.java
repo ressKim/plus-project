@@ -9,8 +9,7 @@ public class Divide {
         Map<String, Integer> result = new HashMap<>();
 
         if (second == 0) {
-//            throw new ArithmeticException("나누는 수는 0 이 불가");
-            System.out.println("나누는 수는 0 이 불가");
+            System.out.print("나누는 수는 0 이 불가 >> ");
             return result;
         }
         if (first == 0) {
@@ -23,7 +22,6 @@ public class Divide {
         int firstTemp = makeAbsValue(first);
         int secondTemp = makeAbsValue(second);
 
-
         for (int temp = 0; firstTemp > temp; temp++) {
             reminder++;
             if (secondTemp == reminder) {
@@ -32,10 +30,14 @@ public class Divide {
             }
         }
 
-        /**
-         * 음수...
-         */
-
+        //일단 나머지는 음수로 표현도 허용하는 방식으로 구현하였습니다.
+        if (first < 0 || second < 0) {
+            reminder = ~reminder + 1;
+            if (first < 0 && second < 0) {
+            } else {
+                quotient = ~quotient + 1;
+            }
+        }
 
         result.put("몫", quotient);
         result.put("나머지", reminder);

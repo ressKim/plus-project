@@ -17,14 +17,11 @@ public class Multiple {
             }
         }
 
-        /**
-         * 한 부호가 마이너스일때 -1 을 곱해야 하는데 방법이 ...
-         */
         if (first < 0 || second < 0) {
             if (first < 0 && second < 0) {
                 return result;
             }
-            return -result;
+            return ~result+1;
         }
 
         return result;
