@@ -11,8 +11,8 @@ public class Multiple {
         int firstTemp = makeAbsValue(first);
         int secondTemp = makeAbsValue(second);
 
-        for (int i = 0; secondTemp >= i; i++) {
-            for (int k = 0; firstTemp >= k; k++) {
+        for (int i = 0; secondTemp > i; i++) {
+            for (int k = 0; firstTemp > k; k++) {
                 result++;
             }
         }
@@ -33,12 +33,12 @@ public class Multiple {
     private static int makeAbsValue(int num) {
         int numTemp = 0;
         if (num > 0) {
-            for (int i = 0; num >= i; i++) {
+            for (int i = 0; num > i; i++) {
                 numTemp++;
             }
         }
         if (num < 0) {
-            for (int i = 0; num <= i; i++) {
+            for (; num < 0; num++) {
                 numTemp++;
             }
         }
