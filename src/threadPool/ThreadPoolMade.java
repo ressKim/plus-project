@@ -11,10 +11,27 @@ public class ThreadPoolMade {
      * 4. 스레드를 잡고 가면서 task 를 실행을 하고 task 가 끝나면 스레드를 다시 돌려준다.(스레드는 대기상태로 다시 반환)
      */
 
-    public static void main(String[] args) {
-//        CustomThreadPool customThreadPool = CustomThreadPool.create(5);
-//        CustomThreadPool.createAndRun(5, taskFiveSecond);
+    public static void main(String[] args) throws IllegalAccessException, InterruptedException {
 
+        CustomThreadPool customThreadPool = CustomThreadPool.create(5);
+        TaskFiveSecond tk1 = new TaskFiveSecond();
+        TaskFiveSecond tk2 = new TaskFiveSecond();
+        TaskFiveSecond tk3 = new TaskFiveSecond();
+        TaskFiveSecond tk4 = new TaskFiveSecond();
+        TaskFiveSecond tk5 = new TaskFiveSecond();
+        TaskFiveSecond tk6 = new TaskFiveSecond();
+        TaskFiveSecond tk7 = new TaskFiveSecond();
+        TaskFiveSecond tk8 = new TaskFiveSecond();
+        TaskFiveSecond tk9 = new TaskFiveSecond();
+        customThreadPool.addTask(tk1);
+        customThreadPool.addTask(tk2);
+        customThreadPool.addTask(tk3);
+        customThreadPool.addTask(tk4);
+        customThreadPool.addTask(tk5);
+        customThreadPool.addTask(tk6);
+        customThreadPool.addTask(tk7);
+        customThreadPool.addTask(tk8);
+        customThreadPool.addTask(tk9);
 
     }
 
