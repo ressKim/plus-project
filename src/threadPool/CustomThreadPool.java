@@ -1,8 +1,12 @@
 package threadPool;
 
+import java.lang.Thread.State;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.UUID;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 //https://honbabzone.com/java/java-thread/
 
@@ -28,7 +32,7 @@ public class CustomThreadPool {
 
   private int maxThreadCount;
 
-  private HashMap<String, Thread> threadHashMap;
+  private Queue<String> taskNameQueue;
 
   private Queue<Runnable> taskQueue;
 
@@ -38,16 +42,8 @@ public class CustomThreadPool {
    * <p>
    */
   public static CustomThreadPool create(int maxThreadCount) {
-    HashMap<String, Thread> threadHashMap = new HashMap<>();
-    for (int i = 0; maxThreadCount > i; i++) {
-      String threadName = "Th-" + (int) (Math.random() * 100000);
-      Thread thread = new Thread(threadName);
-      threadHashMap.put(threadName, thread);
-
-    }
-    return new CustomThreadPool(maxThreadCount, threadHashMap);
+    return new CustomThreadPool(maxThreadCount);
   }
-
 
   /**
    * <p>
@@ -56,7 +52,20 @@ public class CustomThreadPool {
    */
   public void addTask(Runnable task) {
     execute(task);
-//    find
+    if (threadCount < maxThreadCount) {
+      runTask();
+    }
+  }
+
+  private void runTask() {
+    if (taskQueue.isEmpty()) {
+      System.out.println("작업할 것이 없음");
+      return;
+    }
+    Thread thread = new Thread(taskQueue.poll());
+    System.out.println("-- taskQueue.size() = " + taskQueue.size());
+    thread.start();
+    System.out.println("-- thread start");
   }
 
   private void execute(Runnable task) {
@@ -64,11 +73,10 @@ public class CustomThreadPool {
     System.out.println("-- taskQueue.size() = " + taskQueue.size());
   }
 
-  private CustomThreadPool(int maxThreadCount,
-      HashMap<String, Thread> threadHashMap) {
+  private CustomThreadPool(int maxThreadCount) {
     this.threadCount = 0;
     this.maxThreadCount = maxThreadCount;
-    this.threadHashMap = threadHashMap;
+    this.taskNameQueue = new LinkedList<>();
     this.taskQueue = new LinkedList<>();
   }
 }

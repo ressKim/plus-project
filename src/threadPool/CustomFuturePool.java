@@ -96,7 +96,6 @@ public class CustomFuturePool {
   public void runTask(Runnable task) {
     threadCount += 1;
     System.out.println("taskQueue = " + taskQueue.size());
-    Executors.newFixedThreadPool(5);
     ExecutorService executor
         = Executors.newSingleThreadExecutor();
     Future<Integer> integerFuture = executor.submit(() -> {
