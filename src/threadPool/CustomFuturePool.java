@@ -1,6 +1,8 @@
 package threadPool;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -35,6 +37,8 @@ public class CustomFuturePool {
   private int maxThreadCount;
 
   private Queue<Runnable> taskQueue;
+
+  private ArrayList<Future> futureArrayList;
 
 
   /**
@@ -100,9 +104,16 @@ public class CustomFuturePool {
         = Executors.newSingleThreadExecutor();
     Future<Integer> integerFuture = executor.submit(() -> {
       System.out.println("--- task start");
-      task.run();
+
+      task.run();//일정 시간이 걸리는 작업
       return 1;
     });
+
+
+
+  }
+
+  private void getFuture(Future<Integer> integerFuture) {
     try {
       //최대 이 시간까지는 기다려주고 이거보다 더 걸리면 그냥 종료 시킨다.
       Integer taskEndCheck = integerFuture.get(100, TimeUnit.SECONDS);

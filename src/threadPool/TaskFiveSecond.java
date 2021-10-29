@@ -7,7 +7,7 @@ public class TaskFiveSecond implements Runnable {
 //    System.out.println("TaskFiveSecond 작업 시작");
     try {
       //thread 를 5초동안 멈춤
-      Thread.sleep(500);
+      Thread.sleep(1500);
 //      System.out.println("TaskFiveSecond 작업 끝 ");
     } catch (InterruptedException e) {
       System.out.println("sleep exception " + e);
